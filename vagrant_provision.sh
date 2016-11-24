@@ -16,3 +16,5 @@ locale-gen en_US.UTF-8
 
 apt-get update
 apt-get install -y npm
+
+ln -s /usr/bin/nodejs /usr/bin/node
