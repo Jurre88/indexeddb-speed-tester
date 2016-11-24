@@ -1,0 +1,31 @@
+div.console-container {
+    margin-top: 50px;
+}
+
+div.console {
+    width: 100%;
+    height: 320px;
+    overflow: scroll;
+    color: #fff;
+    background-color: #00242d;
+    padding: 5px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.clear-console-container,
+.is-verbose-container,
+.should-scroll-container{
+    margin-left: 10px;
+}
+
+@media screen and (min-height: 600px) {
+    div.console {
+        height: 400px;
+    }
+}
+
+@media screen and (min-height: 960px) {
+    div.console {
+        height: 600px;
+    }
+}

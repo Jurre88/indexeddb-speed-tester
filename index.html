@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>DB Speed test</title>
+
+	<link rel="stylesheet"
+		  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		  crossorigin="anonymous">
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+
+	<link href="/css/console.css" rel="stylesheet" type="text/css">
+	<style>
+		.form-control {
+			display: inline;
+		}
+
+		div.buttons-container div {
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+
+<noscript>
+	<div class="alert alert-danger">
+		<strong>DANGER</strong>
+		Please enable Javascript, otherwise this tool won't work.
+	</div>
+</noscript>
+
+<div class="container">
+	<h1>Database speed tester</h1>
+</div>
+
+<div class="container">
+	<div class="col-xs-12 buttons-container">
+		<div>
+			<button id="count-tickets" class="btn btn-primary">Count tickets</button>
+			<button id="show-all-tickets" class="btn btn-primary">Show all tickets</button>
+			<button id="delete-all-tickets" class="btn btn-danger">Delete all tickets</button>
+		</div>
+
+		<div>
+			<input id="ticket-amount" class="form-control" style="width: 100px;" type="number" min="1" max="999999" value="1" />
+			<button id="fill-database-with-tickets" class="btn btn-success">Fill database with tickets</button>
+		</div>
+
+		<div>
+			<input id="barcode" class="form-control" style="width: 200px;" type="text" />
+			<button id="search-barcode" class="btn btn-primary">Search for barcode</button>
+			<button id="scan-barcode" class="btn btn-primary">Scan barcode</button>
+		</div>
+
+		<div>
+			<input id="number-of-barcodes-to-scan" class="form-control" style="width: 100px;" type="number" min="1" max="999999" value="1" />
+			<button id="scan-random-barcode" class="btn btn-success">Scan random barcode</button>
+		</div>
+	</div>
+	<div class="col-xs-12 console-container">
+            <span class="pull-right clear-console-container">
+                <button id="clear-console-window" type="button" class="btn btn-danger">
+                    Clear
+                </button>
+            </span>
+		<span class="pull-right is-verbose-container">
+                <label for="is-verbose">Verbose</label>
+                <input id="is-verbose" name="is-verbose" type="checkbox" />
+            </span>
+		<span class="pull-right should-scroll-container">
+                <label for="should-scroll">Autoscroll</label>
+                <input id="should-scroll" name="should-scroll" type="checkbox"
+					   checked />
+            </span>
+		<div id="console" class="console">
+		</div>
+	</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+<script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/names.js"></script>
+<script src="/js/ticketTypes.js"></script>
+<script src="/js/ConsoleWindow.js"></script>
+<script src="/js/DatabaseBuilder.js"></script>
+<script>
+    var consoleWindow = new ConsoleWindow();
+    var databaseBuilder = new DatabaseBuilder();
+</script>
+</body>
+</html>
