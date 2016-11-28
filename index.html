@@ -39,27 +39,42 @@
 </div>
 
 <div class="container">
-	<div class="col-xs-12 buttons-container">
+	<div class="col-xs-6 buttons-container">
 		<div>
-			<button id="count-tickets" class="btn btn-primary">Count tickets</button>
-			<button id="show-all-tickets" class="btn btn-primary">Show all tickets</button>
-			<button id="delete-all-tickets" class="btn btn-danger">Delete all tickets</button>
+			<button id="count-tickets" class="btn btn-primary btn-sm">Count tickets</button>
+			<button id="show-all-tickets" class="btn btn-primary btn-sm">Show all tickets</button>
+			<button id="delete-all-tickets" class="btn btn-danger btn-sm">Delete all tickets</button>
 		</div>
 
 		<div>
 			<input id="ticket-amount" class="form-control" style="width: 100px;" type="number" min="1" max="999999" value="1" />
-			<button id="fill-database-with-tickets" class="btn btn-success">Fill database with tickets</button>
-		</div>
-
-		<div>
-			<input id="barcode" class="form-control" style="width: 200px;" type="text" />
-			<button id="search-barcode" class="btn btn-primary">Search for barcode</button>
-			<button id="scan-barcode" class="btn btn-primary">Scan barcode</button>
+			<button id="fill-database-with-tickets" class="btn btn-success btn-sm">Fill database with tickets</button>
 		</div>
 
 		<div>
 			<input id="number-of-barcodes-to-scan" class="form-control" style="width: 100px;" type="number" min="1" max="999999" value="1" />
-			<button id="scan-random-barcode" class="btn btn-success">Scan random barcode</button>
+			<button id="scan-random-barcode" class="btn btn-success btn-sm">Scan random barcode</button>
+		</div>
+	</div>
+	<div class="col-xs-6 buttons-container">
+		<div>
+			<input id="barcode" class="form-control" style="width: 200px;" type="text" />
+			<button id="search-barcode" class="btn btn-primary btn-sm">Search for barcode</button>
+			<button id="scan-barcode" class="btn btn-primary btn-sm">Scan barcode</button>
+		</div>
+
+		<div>
+			<input id="search-query" class="form-control" style="width: 200px;" type="text" />
+			<button id="search" class="btn btn-info btn-sm">Search</button>
+			<button id="search-full" class="btn btn-info btn-sm">Full search</button>
+		</div>
+
+		<div>
+			<button type="button" id="show-statistics"
+					class="btn btn-primary btn-sm"
+					data-toggle="modal" data-target="#statisticsModal">
+				Statistics
+			</button>
 		</div>
 	</div>
 	<div class="col-xs-12 console-container">
@@ -82,6 +97,25 @@
 	</div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="statisticsModal" tabindex="-1" role="dialog" aria-labelledby="statisticsModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
@@ -92,10 +126,10 @@
 <script src="/js/names.js"></script>
 <script src="/js/ticketTypes.js"></script>
 <script src="/js/ConsoleWindow.js"></script>
-<script src="/js/DatabaseBuilder.js"></script>
+<script src="/js/App.js"></script>
 <script>
     var consoleWindow = new ConsoleWindow();
-    var databaseBuilder = new DatabaseBuilder();
+    var app = new App();
 </script>
 </body>
 </html>
