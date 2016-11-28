@@ -15,6 +15,8 @@ export LC_CTYPE=UTF-8
 locale-gen en_US.UTF-8
 
 apt-get update
-apt-get install -y npm
+apt-get install -y npm apache2
 
 ln -s /usr/bin/nodejs /usr/bin/node
+rm -rf /var/www/html/
+ln -s /vagrant/ /var/www/html
